@@ -17,7 +17,7 @@ chmod -R 755 /opt/ulyaothchat
 (the permissions on "ulyaothchat" are technically not needed as 755 but I will update this later)
 
 Create the following folders in your html folder:
-banlogs
-upload
+mkdir banlogs
+mkdir upload
 
 They need to have write permission but "no" execute permission.
