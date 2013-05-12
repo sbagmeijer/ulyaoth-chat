@@ -9,22 +9,28 @@ yum install mariadb.x86_64 perl-DBI.x86_64 perl-BerkeleyDB.x86_64 perl-CGI perl-
 
 Installation:
 Copy the content of the "cgi-bin" folder into your servers "cgi-bin" folder.
-And make sure all files and directories have permission 755
-
 Copy the folder "ulyaothchat" to "/opt/ulyaothchat"
-chmod -R 755 /opt/ulyaothchat
 
-I also had to change Sellinux:
+Now create a linux group "ulyaoth" And add your own user to that group.
+sudo groupadd ulyaoth
+
+Create the following directories:
+mkdir -p /var/www/html/upload
+mkdir -p /var/www/html/banlogs
+
+Permissions:
+sudo chown -R apache:ulyaoth /var/www/
+sudo chown -R apache:ulyaoth /opt/ulyaothchat/
+sudo chmod -R 570 /var/www/html/banlogs
+sudo chmod -R 570 /var/www/html/upload
+sudo chmod u+w /var/www/html/banlogs
+sudo chmod u+w /var/www/html/upload
+sudo chmod -x /var/www/html/banlogs
+sudo chmod -x /var/www/html/upload
 chcon -Rt httpd_sys_script_exec_t /opt/ulyaothchat/
 
-(the permissions on "ulyaothchat" are technically not needed as 755 but I will update this later)
-
-Create the following folders in your html folder:
-mkdir banlogs
-mkdir upload
-
-They need to have write permission but "no" execute permission.
-
+This one below the permissions we will fix later
+chmod -R 755 /opt/ulyaothchat
 
 Firewall on Fedora 19:
 firewall-cmd --permanent --add-service=http
