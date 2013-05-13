@@ -27,6 +27,7 @@ sudo chmod u+w /var/www/html/banlogs
 sudo chmod u+w /var/www/html/upload
 sudo chmod -x /var/www/html/banlogs
 sudo chmod -x /var/www/html/upload
+sudo chcon -R -t httpd_sys_content_t /opt/ulyaothchat/
 chcon -Rt httpd_sys_script_exec_t /opt/ulyaothchat/
 
 This one below the permissions we will fix later
@@ -34,3 +35,10 @@ chmod -R 755 /opt/ulyaothchat
 
 Firewall on Fedora 19:
 firewall-cmd --permanent --add-service=http
+
+Perl Modules require:
+DB_File
+
+
+
+$root = '/var/www/ulyaothchat';
