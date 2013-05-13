@@ -49,7 +49,7 @@ print "<b>| <font size=\"+1\"><a href=\"$location?n=$DATA{'n'}&room=$room&id=$id
 }
 
 
-print "<b>| <a href=\"$location?n=$DATA{'n'}&room=$room&id=$DATA{'id'}&msg=/help\"> Help </a> | <a href=\"$location?n=$DATA{'n'}&room=$room&id=$DATA{'id'}&msg=\/im+1\" onClick=\"window.open('$location?n=$DATA{'n'}&room=$room&id=$DATA{'id'}&msg=/im+1','w','height=500,width=645,toolbar=no,scrollbars=yes,resizable=yes')\" target=\"w\"> Images </a> | <a href=\"\/cgi-bin\/fhome\/cp.cgi\" target=_blank> Free Home</a> | <a href=\"\/cgi-bin\/fhome\/ops.cgi\" target=_blank> Sign Up </a> | <a href=\"$location?n=$DATA{'n'}&room=$room&id=$DATA{'id'}&msg=/quit\"> QUIT </a> | </b></form>\n</body>";
+print "<b>| <a href=\"$location?n=$DATA{'n'}&room=$room&id=$DATA{'id'}&msg=/help\"> Help </a> | <a href=\"$location?n=$DATA{'n'}&room=$room&id=$DATA{'id'}&msg=\/im+1\" onClick=\"window.open('$location?n=$DATA{'n'}&room=$room&id=$DATA{'id'}&msg=/im+1','w','height=500,width=645,toolbar=no,scrollbars=yes,resizable=yes')\" target=\"w\"> Images </a> | <a href=\"\/cgi-bin\/cpanel\/cpanel.cgi\" target=_blank> Control Panel</a> | <a href=\"\/cgi-bin\/cpanel\/signup.cgi\" target=_blank> Sign Up </a> | <a href=\"$location?n=$DATA{'n'}&room=$room&id=$DATA{'id'}&msg=/quit\"> QUIT </a> | </b></form>\n</body>";
 
 # <a href=\"$location?n=$DATA{'n'}&room=$room&id=$DATA{'id'}&msg=/images\">
  }else{
