@@ -1,6 +1,11 @@
 ulyaoth-chat
 ============
 
+TEST IT:
+http://chat.ulyaothchat.net/cgi-bin/chat/chat.cgi
+
+INSTALLATION:
+
 For this installation I am using a Red Hat bassed operating system however it should work on any other Linux distro and even on a Windows machine.
 For windows you would need to alter many files to use the correct perl path (future update will automate this)
 
