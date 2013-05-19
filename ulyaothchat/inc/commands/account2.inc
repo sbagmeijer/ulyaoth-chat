@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 
+use DB_File;
 
 if ($command eq '/account2' && $level < 1){
 

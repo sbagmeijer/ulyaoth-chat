@@ -44,6 +44,7 @@ firewall-cmd --permanent --add-service=http
 Perl Modules require:
 DB_File
 
-
-
 $root = '/var/www/ulyaothchat';
+
+Admin Account:
+You can login with the account "Admin" and the password "admin007" be sure to change the password directly with the /account command.
