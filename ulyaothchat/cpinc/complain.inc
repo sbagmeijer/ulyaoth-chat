@@ -9,7 +9,7 @@ print <<"(END HTML FOOTER)";
 <html>
 <body>
 <center><font size=+5 color=#FF0000><i>Complain</i></font></center>
-<form method="POST" action="cp.cgi">
+<form method="POST" action="cpanel.cgi">
 <blockquote><blockquote>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr>

@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use DB_File;
+
 if(!$DATA{'b'}){
 
 
@@ -7,14 +9,14 @@ print <<"(END HTML FOOTER)";
 
 <html>
 <head>
-<title>Saqer Chat!</title>
+<title>Ulyaoth Chat!</title>
 </head>
 <body>
 <center><br><i><font size="+5" color="#FF0000">Change Password</font></i></center>
 <blockquote>
   <blockquote>
 
-    <form method="POST" action="cp.cgi">
+    <form method="POST" action="cpanel.cgi">
 
 <input type="hidden" value="$DATA{'ops'}" name="ops">
 
@@ -91,14 +93,14 @@ print <<"(END HTML FOOTER)";
 
 <html>
 <head>
-<title>Saqer Chat!</title>
+<title>Ulyaoth Chat!</title>
 </head>
 <body>
 <center><br><i><font size="+5" color="#FF0000">Change Password</font></i></center>
 <blockquote>
   <blockquote>
     <center>$er</center>
-    <form method="POST" action="cp.cgi">
+    <form method="POST" action="cpanel.cgi">
 
 <input type="hidden" value="$DATA{'ops'}" name="ops">
 
@@ -148,14 +150,14 @@ dbmopen(%USER,"$root/ops/ops/$DATA{'ops'}",0777);
 
     open(MAIL,"|$sendmail -t");
     print MAIL "To: $USER{'email'}\n";
-    print MAIL "From: webmaster\@saqerchat.com (control panel)\n";
-    print MAIL "Subject: SaqerChat Ops Account!\n";
+    print MAIL "From: webmaster\@ulyaothchat.net (control panel)\n";
+    print MAIL "Subject: Ulyaoth Chat Membership Account!\n";
     print MAIL "This is a notice for you that you used the Members Control Panel to update your account information.\n\n";
     print MAIL "-" x 75 . "\n";
     print MAIL "Old Password: $USER{'realpassword'}\n";
     print MAIL "New Password: $DATA{'p1'}\n";
     print MAIL "-" x 75 . "\n\n";
-    print MAIL "Saqer Chat! Admin\n http:\/\/www.saqerchat.com\n";
+    print MAIL "Ulyaoth Chat! Admin\n http:\/\/www.ulyaothchat.net\n";
     close(MAIL);
 
 
@@ -174,7 +176,7 @@ print <<"(END HTML FOOTER)";
 <html>
 
 <head>
-<title>Saqer Chat!</title>
+<title>Ulyaoth Chat!</title>
 </head>
 <body>
 

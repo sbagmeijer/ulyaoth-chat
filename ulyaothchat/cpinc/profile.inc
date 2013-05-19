@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use DB_File;
+
 if(!$DATA{'b'}){
 
 dbmopen(%USER,"$root/ops/ops/$DATA{'ops'}",0777);
@@ -11,7 +13,7 @@ print <<"(END HTML FOOTER)";
 <head>
 </head>
 <body>
-<form method="POST" action="cp.cgi">
+<form method="POST" action="cpanel.cgi">
 <center><font size=+5 color=#0000FF><i>Profile</i></font></center>
 <blockquote><blockquote>
 <TABLE>

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-
+use DB_File;
 
 dbmopen(%O,"$root/ops/ops/$DATA{'ops'}",0777);
 
@@ -32,7 +32,7 @@ print <<"(END HTML FOOTER)";
 <table border="0" cellpadding="0" cellspacing="4" align="center">
 
 
-<b>|| <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=ops\">VIEW OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=comm\">VIEW COMM OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=staff\">VIEW STAFF OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=admin\">VIEW ADMIN OPS</a> || </b>
+<b>|| <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=ops\">VIEW OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=comm\">VIEW COMM OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=staff\">VIEW STAFF OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=admin\">VIEW ADMIN OPS</a> || </b>
 (END HTML FOOTER)
 
 
@@ -134,7 +134,7 @@ print <<"(END HTML FOOTER)";
 <table border="0" cellpadding="0" cellspacing="4" align="center">
 
 
-<b>|| <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=ops\">VIEW OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=comm\">VIEW COMM OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=staff\">VIEW STAFF OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=admin\">VIEW ADMIN OPS</a> || </b><p>
+<b>|| <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=ops\">VIEW OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=comm\">VIEW COMM OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=staff\">VIEW STAFF OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=admin\">VIEW ADMIN OPS</a> || </b><p>
 (END HTML FOOTER)
 
 
@@ -218,7 +218,7 @@ print <<"(END HTML FOOTER)";
 <table border="0" cellpadding="0" cellspacing="4" align="center">
 
 
-<b>|| <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=ops\">VIEW OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=comm\">VIEW COMM OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=staff\">VIEW STAFF OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=admin\">VIEW ADMIN OPS</a> || </b><p>
+<b>|| <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=ops\">VIEW OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=comm\">VIEW COMM OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=staff\">VIEW STAFF OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=admin\">VIEW ADMIN OPS</a> || </b><p>
 (END HTML FOOTER)
 
 
@@ -309,7 +309,7 @@ print <<"(END HTML FOOTER)";
 <table border="0" cellpadding="0" cellspacing="4" align="center">
 
 
-<b>|| <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=ops\">VIEW OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=comm\">VIEW COMM OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=staff\">VIEW STAFF OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=admin\">VIEW ADMIN OPS</a> || </b><p>
+<b>|| <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=ops\">VIEW OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=comm\">VIEW COMM OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=staff\">VIEW STAFF OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=admin\">VIEW ADMIN OPS</a> || </b><p>
 (END HTML FOOTER)
 
 
@@ -397,7 +397,7 @@ print <<"(END HTML FOOTER)";
 <table border="0" cellpadding="0" cellspacing="4" align="center">
 
 
-<b>|| <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=ops\">VIEW OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=comm\">VIEW COMM OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=staff\">VIEW STAFF OPS</a> || <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=admin\">VIEW ADMIN OPS</a> || </b><p>
+<b>|| <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=ops\">VIEW OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=comm\">VIEW COMM OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=staff\">VIEW STAFF OPS</a> || <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=database&b=admin\">VIEW ADMIN OPS</a> || </b><p>
 (END HTML FOOTER)
 
 

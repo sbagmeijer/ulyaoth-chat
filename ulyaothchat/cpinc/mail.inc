@@ -27,7 +27,7 @@ print <<"(END HTML FOOTER)";
 </head>
 <body bgcolor="#000000" text="#ffffff">
 
-<center>You have NO chat mail, please click <a href="cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=sendmail">HERE</a> to send!</center>
+<center>You have NO chat mail, please click <a href="cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=sendmail">HERE</a> to send!</center>
 
 </body>
 </html>
@@ -49,7 +49,7 @@ print <<"(END HTML FOOTER)";
 <title>$title</title>
 </head>
 <body bgcolor="#ffffff" text="#000000">
-<p><p><b>||<a href="cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=cmail">Inbox</a> || <a href="cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=sendmail">Compose</a> ||</b><p>
+<p><p><b>||<a href="cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=cmail">Inbox</a> || <a href="cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=sendmail">Compose</a> ||</b><p>
 
 (END HTML FOOTER)
 
@@ -66,7 +66,7 @@ $c3 =~ s/^\s+//ig;
 
 $c3 =~ s/^\<!-- (([^ >]|\n)*) -->//ig;
 
-print "<b>OPTIONS: <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=del&b=$c1\">DEL</a> | <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=addwait&b=$c2\">Add WAIT</a> | <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=sendmail&b=$c2\">REPLAY</a></b><br>\n $c3\n\n<hr>";
+print "<b>OPTIONS: <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=del&b=$c1\">DEL</a> | <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=addwait&b=$c2\">Add WAIT</a> | <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=sendmail&b=$c2\">REPLAY</a></b><br>\n $c3\n\n<hr>";
 
 }
 

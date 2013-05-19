@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 
+use DB_File;
 
 dbmopen(%O,"$root/ops/ops/$DATA{'ops'}",0777);
 
@@ -29,7 +30,7 @@ print <<"(END HTML FOOTER)";
 <body bgcolor="#000000" text="#ffffff">
 
 <p><center>View/Edit Agents Information</center><p>
-<FORM METHOD=\"POST\" ACTION=\"cp.cgi\">
+<FORM METHOD=\"POST\" ACTION=\"cpanel.cgi\">
 
 <table border="0" cellpadding="0" cellspacing="4" align="center">
 <center>
@@ -85,7 +86,7 @@ print <<"(END HTML FOOTER)";
 <body bgcolor="#000000" text="#ffffff">
 
 <p><center>View/Edit Agents Information</center><p>
-<FORM METHOD=\"POST\" ACTION=\"cp.cgi\">
+<FORM METHOD=\"POST\" ACTION=\"cpanel.cgi\">
 
 <table border="0" cellpadding="0" cellspacing="4" align="center">
 <center>
@@ -145,7 +146,7 @@ print <<"(END HTML FOOTER)";
 <body bgcolor="#000000" text="#ffffff">
 
 <p><center>View/Edit Agents Information</center><p>
-<FORM METHOD=\"POST\" ACTION=\"cp.cgi\">
+<FORM METHOD=\"POST\" ACTION=\"cpanel.cgi\">
 
 <table border="0" cellpadding="0" cellspacing="4" align="center">
 <center>

@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use DB_File;
+
 print "Content-type: text/html\n\n";
 
 ($sec,$min,$hour,$day,$month,$year,$day2) = (localtime(time))[0,1,2,3,4,5,6];
@@ -38,7 +40,7 @@ print <<"(END HTML FOOTER)";
 </head>
 <body>
 <center><font size=+3 color=#FF0000><i>Check Ops Application/RENEWAL</i></font></center>
-<form method="POST" action="cp.cgi">
+<form method="POST" action="cpanel.cgi">
 
   <div align="center"><center><p>Input Application Code:<br>
   <input type="text" name="b" size="20" maxlength="40"></p>
@@ -74,7 +76,7 @@ print <<"(END HTML FOOTER)";
 </head>
 <body>
 <center><font size=+3 color=#FF0000><i>Check Ops Application/RENEWAL</i></font>\n<p>Error, application with code <b>$DATA{'b'}</b> not found.<p></center>
-<form method="POST" action="cp.cgi">
+<form method="POST" action="cpanel.cgi">
   <div align="center"><center><p>Input Application Code:<br>
   <input type="text" name="b" size="20" maxlength="40"></p>
   </center></p>
@@ -134,7 +136,7 @@ print <<"(END HTML FOOTER)";
 <body><center><b>Application with code <b>$DATA{'b'}</b>.</b></center><p><p>
 <center><table width=500><tr><td>
 
-<FORM METHOD="POST" NAME="msg" ACTION="cp.cgi">
+<FORM METHOD="POST" NAME="msg" ACTION="cpanel.cgi">
 
 <b>Nickname : <font color="red">$O{'nickname'}</font></b><p>
 $money<p>
@@ -149,7 +151,7 @@ $money<p>
 
 <input type="hidden" value="renew" name="a">
 
-<br><INPUT TYPE=SUBMIT VALUE="  SUBMIT/ RENEW ACCOUNT  "> || <b><a href="cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=renew"> ABORT</a><b><br></body>
+<br><INPUT TYPE=SUBMIT VALUE="  SUBMIT/ RENEW ACCOUNT  "> || <b><a href="cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=renew"> ABORT</a><b><br></body>
 
 (END HTML FOOTER)
 
@@ -251,8 +253,8 @@ dbmopen(%OP,"$root/ops/ops/$APP{'nickname'}",0777);
     open(MAIL,"|$sendmail -t");
 
     print MAIL "To: $OP{'email'}\n";
-    print MAIL "From: webmaster\@saqerchat.com (Saqerchat Admin)\n";
-    print MAIL "Subject: SaqerChat Membership!\n";
+    print MAIL "From: webmaster\@ulyaothchat.net (Ulyaoth Chay Admin)\n";
+    print MAIL "Subject: Ulyaoth Chat Membership!\n";
     print MAIL "This is a notice that your Ops account has been renewed.\n\n";
     print MAIL "-" x 75 . "\n";
     print MAIL "Nick: $APP{'nickname'}\n";
@@ -260,7 +262,7 @@ dbmopen(%OP,"$root/ops/ops/$APP{'nickname'}",0777);
     print MAIL "Email: $OP{'email'}\n";
     print MAIl "Account renewed for $APP{'renew_length'} motnh(s) ending on $APP{'ops_end'}\n";
     print MAIL "-" x 75 . "\n\n";
-    print MAIL "Saqer Chat! Admin\n http:\/\/www.saqerchat.com\n";
+    print MAIL "Ulyaoth Chat! Admin\n http:\/\/www.ulyaothchat.net\n";
     close(MAIL);
 
 

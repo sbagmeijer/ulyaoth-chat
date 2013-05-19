@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use DB_File;
+
 dbmopen(%O,"$root/ops/ops/$DATA{'ops'}",0777);
 
 if($O{'level'} < $staff_rank){

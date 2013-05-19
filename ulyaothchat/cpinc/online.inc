@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+
+use DB_File;
+
 print "Content-type: text/html\n\n";
 
 

@@ -20,7 +20,7 @@ print "<center>\n";
 
 print "<table cellpadding=1 cellspacing=0 border=\"0\">\n";
 
-print "<form method=post action=\"cp.cgi\" target=_top>\n";
+print "<form method=post action=\"cpanel.cgi\" target=_top>\n";
 
 print "<tr><td colspan=2><center><b></center></b></td></tr>\n";
 

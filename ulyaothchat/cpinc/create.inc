@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use DB_File;
+
 print "Content-type: text/html\n\n";
 
 dbmopen(%O,"$root/ops/ops/$DATA{'ops'}",0777);
@@ -26,7 +28,7 @@ print <<"(END HTML FOOTER)";
 </head>
 <body>
 <center><font size=+3 color=#FF0000><i>Check Ops Application/Create Account</i></font></center>
-<form method="POST" action="cp.cgi">
+<form method="POST" action="cpanel.cgi">
   <div align="center"><center><p>Input Application Code:<br>
   <input type="text" name="b" size="20" maxlength="40"></p>
   </center></p>
@@ -64,7 +66,7 @@ print <<"(END HTML FOOTER)";
 </head>
 <body>
 <center><font size=+3 color=#FF0000><i>Check Ops Application/Create Account</i></font>\n<p>Error, application with code <b>$DATA{'b'}</b> not found.<p></center>
-<form method="POST" action="cp.cgi">
+<form method="POST" action="cpanel.cgi">
   <div align="center"><center><p>Input Application Code:<br>
   <input type="text" name="b" size="20" maxlength="40"></p>
   </center></p>
@@ -107,7 +109,7 @@ print <<"(END HTML FOOTER)";
 <body><center><b>Application with code <b>$DATA{'b'}</b>.</b></center><p><p>
 <center><table width=500><tr><td>
 
-<FORM METHOD="POST" NAME="msg" ACTION="cp.cgi">
+<FORM METHOD="POST" NAME="msg" ACTION="cpanel.cgi">
 
 <b>Nickname : <font color="red">$O{'application'} $taken</font></b><p>
 $O{'level'} - Rank<p>
@@ -131,7 +133,7 @@ $O{'email'} - Email address<p>
 
 <input type="hidden" value="create" name="a">
 
-<br><INPUT TYPE=SUBMIT VALUE="  ADD/ACCOUNT  "> || <b><a href="cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=create"> ABORT</a><b><br></body>
+<br><INPUT TYPE=SUBMIT VALUE="  ADD/ACCOUNT  "> || <b><a href="cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=create"> ABORT</a><b><br></body>
 
 (END HTML FOOTER)
 
@@ -193,8 +195,8 @@ dbmopen(%US,"$root/app/$DATA{'b'}",0777);
 
     open(MAIL,"|$sendmail -t");
     print MAIL "To: $US{'email'}\n";
-    print MAIL "From: webmaster\@saqerchat.com (Saqerchat Admin)\n";
-    print MAIL "Subject: SaqerChat Membership!\n";
+    print MAIL "From: webmaster\@ulyaothchat.net (Ulyaoth Chat Admin)\n";
+    print MAIL "Subject: Ulyaoth Chat Membership!\n";
     print MAIL "You have a new account with us with the following information, please do NOT print this email or forward to someone else.\n\n";
     print MAIL "-" x 75 . "\n";
     print MAIL "Nick: $US{'application'}\n";
@@ -202,7 +204,7 @@ dbmopen(%US,"$root/app/$DATA{'b'}",0777);
     print MAIL "Email: $US{'email'}\n";
     print MAIl "Account started on $start for $US{'length'} motnh(s) ending $end.\n";
     print MAIL "-" x 75 . "\n\n";
-    print MAIL "Saqer Chat! Admin\n http:\/\/www.saqerchat.com\n";
+    print MAIL "Ulyaoth Chat! Admin\n http:\/\/www.ulyaothchat.net\n";
     close(MAIL);
 
 $US{'ops_began'} = $start;

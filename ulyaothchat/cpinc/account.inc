@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use DB_File;
+
 if(!$DATA{'b'}){
 
 dbmopen(%USER,"$root/ops/ops/$DATA{'ops'}",0777);
@@ -11,7 +13,7 @@ print <<"(END HTML FOOTER)";
 <head>
 </head>
 <body>
-<form method="POST" action="cp.cgi">
+<form method="POST" action="cpanel.cgi">
 <center><i><font color="#FF0000"><font size=+5>Account Information</font></font></i></center>
 <blockquote>
 <blockquote><b><u><font color="#000000">Fixed Information:</font></u></b>
@@ -70,13 +72,13 @@ $USER{'hint'} = $DATA{'hint'};
 
     open(MAIL,"|$sendmail -t");
     print MAIL "To: $DATA{'email'}\n";
-    print MAIL "From: webmaster\@saqerchat.com (control panel)\n";
+    print MAIL "From: webmaster\@ulyaothchat.net (control panel)\n";
     print MAIL "Subject: $DATA{'n'}\n\n$DATA{'icq_message'}\n";
     print MAIL "This is a notice for you that you used the Members Control Panel to update your account information.\n\n";
     print MAIL "-" x 75 . "\n";
     print MAIL "Your new hint word will be: $DATA{'hint'}\n";
     print MAIL "-" x 75 . "\n\n";
-    print MAIL "Saqer Chat! Admin\n http:\/\/www.saqerchat.com\n";
+    print MAIL "Ulyaoth Chat! Admin\n http:\/\/www.ulyaothchat.net\n";
     close(MAIL);
 }
 
@@ -89,13 +91,13 @@ $rr = "Updated";;
 
     open(MAIL,"|$sendmail -t");
     print MAIL "To: $DATA{'email'}\n";
-    print MAIL "From: webmaster\@saqerchat.com (control panel)\n";
-    print MAIL "Subject: SaqerChat Ops Account!\n";
+    print MAIL "From: webmaster\@ulyaothchat.net (control panel)\n";
+    print MAIL "Subject: Ulyaoth Chat Membership!\n";
     print MAIL "This is a notice for you that you used the Members Control Panel to update your account information.\n\n";
     print MAIL "-" x 75 . "\n";
     print MAIL "Your new registered e-mail address will be $DATA{'email'}\n";
     print MAIL "-" x 75 . "\n\n";
-    print MAIL "Saqer Chat! Admin\n http:\/\/www.saqerchat.com\n";
+    print MAIL "Ulyaoth Chat! Admin\n http:\/\/www.ulyaothchat.net\n";
     close(MAIL);
 
 
@@ -115,7 +117,7 @@ print <<"(END HTML FOOTER)";
 <head>
 </head>
 <body>
-<form method="POST" action="cp.cgi">
+<form method="POST" action="cpanel.cgi">
 <center><i><font color="#FF0000"><font size=+5>Account Information</font></font></i></center>
 <blockquote>
 <blockquote><b><u><font color="#000000">Fixed Information:</font></u></b>

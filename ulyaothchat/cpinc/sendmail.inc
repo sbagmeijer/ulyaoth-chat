@@ -35,7 +35,7 @@ print <<"(END HTML FOOTER)";
 
 <center><font size=+5 color=#FF0000><i>Send New ChatMail</i></font></center>
 
-<form method="POST" action="cp.cgi">
+<form method="POST" action="cpanel.cgi">
 <div align="center">
 <table border="0" cellpadding="0" cellspacing="0">
 <tr>
@@ -184,7 +184,7 @@ $c3 =~ s/^\s+//ig;
 
 $c3 =~ s/^\<!-- (([^ >]|\n)*) -->//ig;
 
-print "<b>OPTIONS: <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=del&b=$c1\">DEL</a> | <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=addwait&b=$c2\">Add WAIT</a> | <a href=\"cp.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=sendmail&b=$c2\">REPLAY</a></b><br>\n $c3\n\n<hr>";
+print "<b>OPTIONS: <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=del&b=$c1\">DEL</a> | <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=addwait&b=$c2\">Add WAIT</a> | <a href=\"cpanel.cgi?ops=$DATA{'ops'}&s=$DATA{'s'}&a=sendmail&b=$c2\">REPLAY</a></b><br>\n $c3\n\n<hr>";
 
 }
 

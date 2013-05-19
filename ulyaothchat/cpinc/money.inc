@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-
+use DB_File;
 
 dbmopen(%O,"$root/ops/ops/$DATA{'ops'}",0777);
 
