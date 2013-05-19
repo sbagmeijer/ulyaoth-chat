@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+use CGI;
+use Fcntl;
+use DB_File;
+
 $time = time();
 
 
@@ -192,8 +196,4 @@ print "<center><p>Your chat mail has been sent to Operator <b>$DATA{'b'}</b>. Ti
 print "</body>\n</html>";
 
 return true;
-
-
-
-return true;
-
+}

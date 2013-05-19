@@ -460,8 +460,7 @@ print <<"(END HTML FOOTER)";
 
 (END HTML FOOTER)
 
-
-
+}
 
 return true;
-
+}
