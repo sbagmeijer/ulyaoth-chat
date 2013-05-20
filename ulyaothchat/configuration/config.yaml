@@ -1,20 +1,6 @@
-﻿---
-ranks:
-  member: 0
-  ops: 1
-  maxops: 100
-  comm: 120
-  maxcomm: 170
-  staff: 180
-  maxstaff: 190
-  admin: 200
-mainchat:
-  chatdirectory: /opt/ulyaothchat
-  title: Ulyaoth Chat
-  webmaster: webmaster@ulyaothchat.net
-  version: 0.1 Alpha
-  location: chat.cgi
-  messagetime: 200
-  kicktime: 600
-  bantime: 7200
-  firstroom: Ulyaoth
+---
+database:
+  server: localhost
+  port: 1109
+  username: blabla
+  password: blabla
