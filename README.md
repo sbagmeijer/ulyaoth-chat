@@ -10,7 +10,7 @@ For this installation I am using a Red Hat bassed operating system however it sh
 For windows you would need to alter many files to use the correct perl path (future update will automate this)
 
 You will need to install the following packages on your server:
-yum install mariadb.x86_64 perl-DBI.x86_64 perl-BerkeleyDB.x86_64 perl-CGI perl-FCGI perl-File-FcntlLock.x86_64 perl-libwww-perl httpd sendmail
+yum install postgresql.x86_64 postgresql-libs.x86_64 perl-DBD-Pg.x86_64 perl-DBI.x86_64 perl-BerkeleyDB.x86_64 perl-CGI perl-FCGI perl-File-FcntlLock.x86_64 perl-libwww-perl httpd sendmail 
 
 Installation:
 Copy the content of the "cgi-bin" folder into your servers "cgi-bin" folder.
@@ -41,8 +41,9 @@ chmod -R 755 /opt/ulyaothchat
 Firewall on Fedora 19:
 firewall-cmd --permanent --add-service=http
 
-Perl Modules require:
+Perl Modules required that you probably need to manually install:
 DB_File
+CGI-Application-Plugin-Config-Perl
 
 $root = '/var/www/ulyaothchat';
 
