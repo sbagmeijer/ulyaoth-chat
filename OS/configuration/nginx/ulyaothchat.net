@@ -1,0 +1,48 @@
+server {
+    server_name ulyaothchat.net;
+    autoindex on;
+    index index.html index.htm index.php;
+    access_log /var/log/nginx/ulyaothchat/access.log;
+    error_log /var/log/nginx/ulyaothchat/error.log;
+    root /var/www/ulyaothchat/html;
+
+    location / {
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location ~ /\. {
+        access_log off;
+        log_not_found off;
+        deny all;
+    }
+
+    location ~* ^/(favicon.ico|robots.txt)$ {
+        access_log off;
+        log_not_found off;
+    }
+
+    location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|xml)$ {
+            access_log        off;
+            expires           30d;
+    }
+
+   location /fpm-status {
+        fastcgi_pass   unix:/var/run/php-fpm/ulyaothchat.sock;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include /etc/nginx/fastcgi_params;
+        #allow localhost
+        allow 127.0.0.1;
+        deny all;
+   }
+
+
+    location ~ \.php$ {
+        fastcgi_pass   unix:/var/run/php-fpm/ulyaothchat.sock;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include /etc/nginx/fastcgi_params;
+        }
+}

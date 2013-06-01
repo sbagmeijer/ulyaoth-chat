@@ -1,52 +1,72 @@
 Ulyaoth Chat
 ============
 
+PROJECT ULYAOTH CHAT:
+My hope and idea is to create a fully functional chat server in php based on the old perl script you can find in OLD or the "Perl Branch", You can see it run on the site at TEST IT as an example as how it should look but then in php.
+I would like to use php, and postgresql but it would be fun to support multiple databases so the end user can choose his own database.
+
 TEST IT:
 -------
+
+PHP version:
+http://php.ulyaothchat.net:8080
+
+Old school perl version:
 http://chat.ulyaothchat.net/cgi-bin/chat/chat.cgi
 
 INSTALLATION:
 -------
 
-For this installation I am using a Red Hat bassed operating system however it should work on any other Linux distro and even on a Windows machine.
-For windows you would need to alter many files to use the correct perl path (future update will automate this)
+For this installation I am using a Red Hat bassed operatings system (Fedora 19) it should however work on other distributions also but the instructions below where based a Fedora machine.
 
 You will need to install the following packages on your server:
-yum install postgresql.x86_64 postgresql-libs.x86_64 perl-YAML-Tiny perl-DBD-Pg.x86_64 perl-DBI.x86_64 perl-BerkeleyDB.x86_64 perl-CGI perl-FCGI perl-File-FcntlLock.x86_64 perl-libwww-perl httpd sendmail 
+yum install postgresql.x86_64 postgresql-libs.x86_64 sendmail nginx memcached.x86_64 php-pecl-memcached.x86_64 libmemcached.x86_64 libmemcached-devel.x86_64 memcached-devel.x86_64 php-fpm php-pgsql.x86_64  
 
 Installation:
-Copy the content of the "cgi-bin" folder into your servers "cgi-bin" folder.
-Copy the folder "ulyaothchat" to "/opt/ulyaothchat"
+you will be able to find the configuration files for php and nginx inside the "OS/configuration/" folder on github.
 
-Now create a linux group "ulyaoth" And add your own user to that group.
+Now create a linux group "ulyaoth" and a usernamed ulyaoth
 sudo groupadd ulyaoth
+sudo adduser -M -s /sbin/nologin ulyaoth -g ulyaoth
 
 Create the following directories:
-mkdir -p /var/www/html/upload
-mkdir -p /var/www/html/banlogs
+mkdir -p /var/www/ulyaothchat/html
 
 Permissions:
-sudo chown -R apache:ulyaoth /var/www/
-sudo chown -R apache:ulyaoth /opt/ulyaothchat/
-sudo chmod -R 570 /var/www/html/banlogs
-sudo chmod -R 570 /var/www/html/upload
-sudo chmod u+w /var/www/html/banlogs
-sudo chmod u+w /var/www/html/upload
-sudo chmod -x /var/www/html/banlogs
-sudo chmod -x /var/www/html/upload
-sudo chcon -R -t httpd_sys_content_t /opt/ulyaothchat/
-chcon -Rt httpd_sys_script_exec_t /opt/ulyaothchat/
-
-This one below the permissions we will fix later
-chmod -R 755 /opt/ulyaothchat
+sudo chown -R nginx:ulyaoth /var/www/ulyaothchat/
 
 Firewall on Fedora 19:
 firewall-cmd --permanent --add-service=http
 
-Perl Modules required that you probably need to manually install:
-DB_File
+(just as a reminder the configuration below is just for people that have no experience with php and nginx, you can create your own configuration nothing does say you must use this).
 
-$root = '/var/www/ulyaothchat';
+Nginx Configuration:
+Create the following directories:
+mkdir -p /etc/nginx/sites-available
+mkdir -p /etc/nginx/sites-enabled
+mkdir -p /etc/nginx/logrotate
+mkdir -p /etc/nginx/ssl
+mkdir -p /var/log/nginx/ulyaothchat 
 
-Admin Account:
-You can login with the account "Admin" and the password "admin007" be sure to change the password directly with the /account command.
+Create & copy the following files from github:
+copy the file "nginx.conf" to /etc/nginx (and overwrite the default one), you will need to edit the file and change the "worked_processes 2;" to a number that fits you cpus so if your server has 1 cpu change the 2 to a 1.
+copy the file "ulyaothchat.net to /etc/nginx/sites-available" and rename the file to your vhost name, then open the file and change the server name to your server name. (server_name php.ulyaothchat.net;)
+
+Browse to the directory "/etc/nginx/sites-enabled" and then run the following command: (change the command to your vhost name)
+ln -s /etc/nginx/sites-available/php.ulyaothchat.net php.ulyaothchat.net
+
+copy the file memcached.ini to the folder "/etc/php.d/" and overwrite the file that already does exist.
+
+vi into the file "/etc/sysconfig/memcached" and change the content of the file to the following values:
+PORT="11211"
+USER="memcached"
+MAXCONN="1024"
+CACHESIZE="512"
+OPTIONS="slab_reassign, slab_automove"
+
+copy the file "php.ini" to /etc/ and overwrite the existing php.ini file.
+copy the file "php-fpm.conf" to /etc/ and overwrite the existing php-fpm.conf file.
+delete the file "/etc/php-fpm.d/www.conf"
+copy the file "ulyaothchat.net.conf" to "/etc/php-fpm.d/" (change the file name to your vhost "yourvhost.conf")
+
+
