@@ -2,17 +2,12 @@ Ulyaoth Chat
 ============
 
 PROJECT ULYAOTH CHAT:
-My hope and idea is to create a fully functional chat server in php based on the old perl script you can find in OLD or the "Perl Branch", You can see it run on the site at TEST IT as an example as how it should look but then in php.
-I would like to use php, and postgresql but it would be fun to support multiple databases so the end user can choose his own database.
+My hope is to update the old script to use a newer perl version and to move to a mysql/postgresql database, in a perfect world people should be allowed to choose what database.
 
 TEST IT:
 -------
 
-PHP version:
-http://php.ulyaothchat.net:8080
-
-Old school perl version:
-http://chat.ulyaothchat.net/cgi-bin/chat/chat.cgi
+http://www.ulyaothchat.net/cgi-bin/chat/chat.cgi
 
 INSTALLATION:
 -------
@@ -20,10 +15,10 @@ INSTALLATION:
 For this installation I am using a Red Hat bassed operatings system (Fedora 19) it should however work on other distributions also but the instructions below where based a Fedora machine.
 
 You will need to install the following packages on your server:
-yum install postgresql.x86_64 postgresql-libs.x86_64 sendmail nginx memcached.x86_64 php-pecl-memcached.x86_64 libmemcached.x86_64 libmemcached-devel.x86_64 memcached-devel.x86_64 php-fpm php-pgsql.x86_64  
+yum install postgresql.x86_64 postgresql-libs.x86_64 sendmail nginx memcached.x86_64 libmemcached.x86_64 libmemcached-devel.x86_64 memcached-devel.x86_64 git 
 
 Installation:
-you will be able to find the configuration files for php and nginx inside the "OS/configuration/" folder on github.
+you will be able to find the configuration files for nginx inside the "OS/configuration/" folder on github.
 
 Now create a linux group "ulyaoth" and a usernamed ulyaoth
 sudo groupadd ulyaoth
@@ -55,8 +50,6 @@ copy the file "ulyaothchat.net to /etc/nginx/sites-available" and rename the fil
 Browse to the directory "/etc/nginx/sites-enabled" and then run the following command: (change the command to your vhost name)
 ln -s /etc/nginx/sites-available/php.ulyaothchat.net php.ulyaothchat.net
 
-copy the file memcached.ini to the folder "/etc/php.d/" and overwrite the file that already does exist.
-
 vi into the file "/etc/sysconfig/memcached" and change the content of the file to the following values:
 PORT="11211"
 USER="memcached"
@@ -64,9 +57,5 @@ MAXCONN="1024"
 CACHESIZE="512"
 OPTIONS="slab_reassign, slab_automove"
 
-copy the file "php.ini" to /etc/ and overwrite the existing php.ini file.
-copy the file "php-fpm.conf" to /etc/ and overwrite the existing php-fpm.conf file.
-delete the file "/etc/php-fpm.d/www.conf"
-copy the file "ulyaothchat.net.conf" to "/etc/php-fpm.d/" (change the file name to your vhost "yourvhost.conf")
 
 
