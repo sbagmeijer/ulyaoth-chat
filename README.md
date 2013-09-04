@@ -9,6 +9,23 @@ TEST IT:
 
 http://www.ulyaothchat.net/cgi-bin/chat/chat.cgi
 
+(Based on the Experimental Branch and nightly updated)
+
+VERSIONS:
+-------
+Master Branch:
+This is a stable Linux version and you should be able to run it without problems
+
+Windows Branch:
+This is a stable Windows Version and you should be able to run it without problems, you have to use "strawberry perl" installed in "C:/strawberry".
+
+Experimental Branch:
+This is a highly unstable version with many changes, things that work here and have been tested will be pushed to the master branch.
+
+C++ Branch:
+Just some fun you should not use it :)!
+
+
 INSTALLATION:
 -------
 
