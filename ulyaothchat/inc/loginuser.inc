@@ -150,7 +150,7 @@ $trace_ip = $Cookies{'realip'};
 
 &SetCookies('realip',$ENV{'REMOTE_ADDR'});
 
-$teace_ip = $ENV{'REMOTE_ADDR'};
+$trace_ip = $ENV{'REMOTE_ADDR'};
 
 }
 
