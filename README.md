@@ -2,7 +2,10 @@ Ulyaoth Chat
 ============
 
 PROJECT ULYAOTH CHAT:
-My hope is to update the old script to use a newer perl version and to move to a mysql/postgresql database, in a perfect world people should be allowed to choose what database.
+My hope is to update this old chat server to use the newest version of perl and in a more strict coding way.
+I would like to move away from Berkeley DB and use MariaDB/MySQL instead with proper sessions.
+
+I also should become fully html5 validated.
 
 TEST IT:
 -------
@@ -28,11 +31,39 @@ Just some fun you should not use it :)!
 
 INSTALLATION:
 -------
-
-For this installation I am using a Red Hat bassed operatings system (Fedora 19) it should however work on other distributions also but the instructions below where based a Fedora machine.
+For this installation I am using a Red Hat bassed operatings system (Fedora 19).
+I Personally use Nginx for all static content and Apache as backend to run the cgi stuff, however you can simpely use apache.
 
 You will need to install the following packages on your server:
-yum install postgresql.x86_64 postgresql-libs.x86_64 sendmail nginx memcached.x86_64 libmemcached.x86_64 libmemcached-devel.x86_64 memcached-devel.x86_64 git 
+
+For a basic installation you need:
+Perl
+Apache/nginx
+sendmail
+
+Database:
+MySQL or MariaDB
+
+
+Optional: (if you choose to use the function)
+memcached.x86_64 
+libmemcached.x86_64
+
+And the following perl modules: (It will not run without even you not use memcached)
+CGI
+CGI::Session
+CGI::Session::Driver:memcached
+Fcntl
+DB_File
+YAML
+YAML::Tiny
+DBD::mysql
+DBI
+warnings
+strict
+
+
+Again you can simpely just use Apache if you not want to use nginx, memcached is also only required if you choose to enable it.
 
 Installation:
 you will be able to find the configuration files for nginx inside the "OS/configuration/" folder on github.
@@ -49,6 +80,3 @@ sudo chown -R nginx:ulyaoth /var/www/ulyaothchat/
 
 Firewall on Fedora 19:
 firewall-cmd --permanent --add-service=http
-
-
-
