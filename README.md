@@ -1,6 +1,8 @@
 Ulyaoth Chat
 ============
 
+If you would like to help please only do so on the "Expirimental Branch" so we all keep in sync.
+
 PROJECT ULYAOTH CHAT:
 My hope is to update this old chat server to use the newest version of perl and in a more strict coding way.
 I would like to move away from Berkeley DB and use MariaDB/MySQL instead with proper sessions.
