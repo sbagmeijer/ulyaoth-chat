@@ -1,7 +1,0 @@
----
-database:
-  server: localhost
-  port: 5432
-  database: ulyaothchat
-  username: blabla
-  password: blabla
